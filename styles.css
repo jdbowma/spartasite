@@ -1,8 +1,17 @@
+a{
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    color:#d4af37;
+}
+a:hover{
+    border-color: #d4af37;
+    transition: border-color 0.5s ease-in-out;
+}
 .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: black;
+            background-color: transparent;
             padding: 15px 50px;
         }
         .logo img {
@@ -19,7 +28,7 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 17px;
             padding: 5px 10px;
             border-bottom: 2px solid transparent;
         }
@@ -47,21 +56,4 @@
         .nav-icons i:hover {
             color: #d4af37;
             transition: color ease-in-out;
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 10px 20px;
-            }
-            .logo img {
-                height: 80px;
-            }
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-            .nav-icons {
-                margin-top: 10px;
-            }
         }
