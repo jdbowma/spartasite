@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparta Productions - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="sparta2.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif; /* or 'Cormorant Garamond', serif; */
+            background-color: #000000;
+            color: #d4af37;
+            text-align: center;
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 500px;
+        }
+        .team-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+           
+            /*border-radius: 10px;*/
+            transition: transform 0.3s ease-in-out;
+        }
+        .team-member:hover img {
+            transform: scale(1.05);
+            filter: brightness(50%);
+        }
+        .team-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #d4af37;
+            transition: opacity 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .team-member:hover .team-info {
+            opacity: 1;
+        }
+        .team-info h3, .team-info p {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .team-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .team-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        h2{
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="sparta.jpg" alt="Sparta Productions"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="meet-the-team.html" class="active">MEET THE TEAM</a></li>
+                <li><a href="services.html">WHAT WE DO</a></li>
+                <li><a href="our-work.html">OUR WORK</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <div class="nav-icons">
+                <!--<span class="search-icon">🔍</span>
+                <span class="menu-icon">☰</span>-->
+            </div>
+        </nav>
+    </header>
+    <h1>Meet the Team</h1>
+    <h2>Production</h2>
+    <section class="team-container">
+
+        <div class="team-member">
+            <img src="roberta.JPG" style="object-position: 0 0;" alt="Team Member 1">
+            <div class="team-info">
+                <h3>Roberta Sparta</h3>
+                <p>Founder and Producer</p>
+                <p>Roberta is the founder of Sparta Productions, an LA-based media company which is built on the principles of authenticity, collaboration, and excellence. Roberta brings a profound understanding of all departments. Her critical scheduling and management skills ensure smooth flow and prompt problem solving when needed.
+                    Becoming a producer has been her natural evolution. Roberta's most recent credits include highly anticipated  and star-studded Western "Buffalo Daze"  and Lifetime Original, "Abducted at an HBCU" directed by Delmar Washington, starring Garcelle Beauvais.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="cole.JPG" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Cole Davis</h3>
+                <p>Production Coordinator - LA, NY</p>
+                <p>A seasoned professional navigating the dynamic landscape of vertical, episodic, and narrative content, Cole brings a distinctive blend of creative vision and meticulous logistical expertise to every production. Possessing a bachelor's degree in screenwriting, Cole is adept at crafting compelling narratives tailored for the screen, while his extensive practical production experience ensures seamless execution from concept to delivery. This comprehensive skill set enables Cole  to excel in all phases of production, from strategic pre-production planning and efficient on-set operations to precise post-production editing and optimization. Cole's ability to bridge the gap between creative artistry and logistical efficiency results in high-quality, engaging  content that resonates with target audiences.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="donald.jpeg" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Donald Westcott</h3>
+                <p>Production Coordinator - Atlanta</p>
+                <p>Several years of experience as a crew member on multiple projects from TV shows to big budget film productions. Graduated from Georgia State University with a bachelor’s degree in film and media with a minor in marketing in 2022. Currently is working on Lifetime productions for RNR media as a production coordinator.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="prainito.jpg" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Nick Prainito</h3>
+                <p>Unit Production Manager - NY</p>
+                <p>Seasoned Unit Production Manager with years of experience bringing film and TV projects to life. From high-end productions with Lifetime, Hallmark, Amazon, and PureFlix to his own ventures in video production, Nick knows how to keep a set running smoothly while keeping spirits high. When he’s not wrangling budgets and schedules, he’s coaching youth hockey, running his podcast studio, or spending quality time as a super cool, loving dad. </p>
+            </div>
+        </div>
+        <!-- Add more team members as needed -->
+    </section>
+    <h2>Directors</h2>
+    <section class="team-container">
+        <div class="team-member">
+            <img src="ben.JPG" style="object-position: 200 200;" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Ben Meyerson</h3>
+                <p>Director and Writer - LA, Atlanta</p>
+                <p>
+                    After completing the Meisner training program at the Joanne Baron Studio, 
+                    Ben immediately began his career as an actor,
+                    landing his first role on the television series, Police Anthology: Gladiator School, 
+                    followed by a starring role in the cult-classic, Society. Other credits include Freeway, Tour of Duty, 
+                    The John Larroquette Show and Judd Apatow projects including Knocked Up, Funny People and the Netflix series, Love. 
+
+                    In 2018, Ben ventured into directing, with the debut of The Wrong Daughter, 
+                    starring Sydney Sweeney. Subsequently, Ben has directed over 20 films across many genres including thrillers, 
+                    rom-coms, horror flicks and verticals. His credits include Requiem For A Scream, My Missing Sister, Love’s Fast Lane, 
+                    Boyfriend Trap and the vertical drama, Saving Nora for PocketFM. Creating quality content, solid performances and dynamic 
+                    cinematography under restrictive budgets and schedules is a skill he has mastered over the years.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="oliver.png" style="object-position: 0 0;" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Oliver Wong</h3>
+                <p>Director - LA, NY</p>
+                <p>Oliver Wong is a Taiwanese screenwriter, director, actor, and stand-up comedian. With the given name of Chia-Yao Wang, Oliver Wong is born and raised in Taiwan on March 4th, 1992. He majored in Radio and Television at National Chengchi University in Taiwan, where he explored and discovered his artistic voice by directing and writing short films. During the final year of his college, he directed, wrote, and edited his thesis film, 100 Apples. A telling of a high schooler struggling to accept his homosexuality, 100 Apples gained international recognition in numerous film festivals. Oliver has created an established career as Director and  often draws comedy inspiration from his lost-in-translation situations, Asian-American experiences, and American gay culture.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="khoi.png" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Khoi Nguyen</h3>
+                <p>Director and DoP - LA, Atlanta</p>
+                <p>Born and raised in Saigon, Khoi came to the U.S. when he was 11. He grew up being surrounded by all forms of art; from learning piano at a young age to dancing and photography in his teens, he eventually found his love in cinematography.
+
+                    Khoi is mentored by Johnny Jensen, A.S.C. on his path as a cinematographer. He earned an MFA in Cinematography from Chapman University. Some works that heavily inspire him are Arrival  by Bradford Young, Maid by Quyen Tran, Columbus by Elisha Christian, and Little Miss Sunshine  by Tim Suhrstedt
+                    
+                    Khoi is a big proponent of collaboration across all departments. He believes that while it’s the cinematographer’s job to be behind the camera, a movie is only made when everything in front of the lens can come together cohesively.  So he strives to work with people who are open to creating together.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="amelia.png" style="object-position: 0 0;" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Amelia Joyce</h3>
+                <p>Writer, Director - NY</p>
+                <p>Amelia has spent the last 20 years working across various industries. She has contributed her talents to magazine publishing, TV and OOH advertising, brand-building and identity, working directly with iconic fashion designers,  actors, musicians, and artists. She is exceptionally skilled at conceptualizing and executing dynamic content, resulting in elevated, expanded reach in fashion, music, beauty, and entertainment. Amelia’s client list includes VOGUE Magazine, LiveNation UK/USA, Prince, Roger Waters, Sony Music, SPIN Magazine, and BBDO. Amelia transitioned from photography to video and is establishing herself as an innovative Director in the the Indie scene
+
+                    Her award-nominated project FROGGY had a successful run in the 2024 festival circuit. Her new project SERENITY is in post production, coming later this year.</p></div>
+        </div>
+    </section>
+    <h2>Directors of Photography</h2>
+    <section class="team-container">
+        <div class="team-member">
+            <img src="salazar.jpg" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Jaime Salazar</h3>
+                <p>DoP - LA, Atlanta</p>
+                <p>Colombian-born creative and dynamic Director of Photography specializing in independent cinema. Renowned for his masterful camera movement and fluid visual storytelling. With an instinct for kinetic framing and a deep understanding of motion, he brings energy and intimacy to every shot, making the camera an active participant in the story.
+                    </p>
+                </div>
+        </div>
+        <div class="team-member">
+            <img src="hennessy.png" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Thomas Hennessy</h3>
+                <p>DoP - LA, Atlanta</p>
+                <p>A 2014 graduate of Columbia College Hollywood, he got his start in the film industry playing a supporting role in Nick Broomfield's Battle for Haditha. Thomas then directed the independent feature films What We Can't Have and Another Time.
+
+                    Thomas also has made a steady career for himself as a Cinematographer, having shot 13 feature films between 2021 and 2023.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="smith.png" style="object-position: 0 0;" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Nelson Smith</h3>
+                <p>DoP - NY</p>
+                <p>Acclaimed Director of Photography specializing in independent cinema, known for his masterful composition and evocative visual storytelling. With a keen eye for framing and a deep understanding of light and shadow, he crafts striking, cinematic images that elevate the emotional core of every story.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="ketak.png" style="object-position: 0 0;" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Ketak Dhiman</h3>
+                <p>DoP - NY</p>
+                <p>Ketak is the founder of  KDECinema and has been the Director of Photography on over 18 projects, including several feature films (Fire With Fire, HWY-905) as well as over a dozen short films (including Exposure Therapy) and music videos. His many other credits include various roles within the Camera Department.</p>
+            </div>
+        </div>
+    </section>
+    <h2>Casting and Post-Production</h2>
+    <section class="team-container">
+        <div class="team-member">
+            <img src="paola.png" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Paola Carleo</h3>
+                <p>Casting Director</p>
+                <p>Specializes in independent cinema, known for discovering breakout talent and assembling unforgettable ensembles. With a keen eye for authenticity and nuance, she has a gift for finding actors who bring raw, compelling performances to the screen, often uncovering fresh faces before they make it big.
+
+                    Passionate about storytelling, Paola works closely with directors to find the perfect cast, ensuring that each role is filled with someone who not only fits the part but elevates the film’s emotional depth. Her ability to spot unique talent and pair them with the right projects has made her a sought-after name in the indie film world.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="zhe.jpg" alt="Team Member 2">
+            <div class="team-info">
+                <h3>Zhe Song</h3>
+                <p>Post Production Supervisor and Key Editor</p>
+                <p>Zhe is a visionary editor and post-production supervisor specializing in vertical mini-dramas, crafting compelling, fast-paced narratives for digital audiences. He masters pacing, rhythm, and emotional beats to create immersive cinematic experiences, leveraging dynamic cuts for impactful mobile-first content. As a supervisor, he ensures high-end polish from color grading to sound design, adapting traditional techniques to short-form storytelling. Zhe proves that even the shortest content can leave a lasting impact, emphasizing quality in the evolving landscape of vertical cinema.</p>
+            </div>
+        </div>
+    </section>
+    <p>CONNECT WITH US</p>
+        <a href="https://www.instagram.com/spartaproductions_/">
+            <i style="color: white; transition: color 0.3s ease-in-out;" onmouseover="this.style.color='#818181'" onmouseout="this.style.color='white'" id="igico" class="fab fa-instagram"></i>
+        </a>
+    <footer style="background-color: black; color: white; padding: 20px 0; font-family:Arial, Helvetica, sans-serif; font-size: 10px;">
+        
+        
+        <p>&copy; 2025 Sparta Productions</p>
+    </footer>
+</body>
+</html>

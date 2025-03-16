@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sparta Productions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            background-color: #000000;
+            color: #d4af37;
+            text-align: center;
+            padding: 20px;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1000px;
+            margin: auto;
+            text-align: left;
+        }
+        .about-container img {
+            width: 50%;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about-text {
+            width: 50%;
+        }
+        .partners {
+            margin-top: 50px;
+        }
+        .partners h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            max-width: 900px;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .partner-item {
+            position: relative;
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .partner-item img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .partner-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+        }
+        .partner-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #d4af37;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .partner-item:hover .partner-caption {
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-container img, .about-text {
+                width: 100%;
+                margin: 0;
+            }
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .partners-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-container">
+        <img src="team-photo.jpg" alt="Sparta Productions Team">
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p><strong>Sparta Productions</strong>, a media company based in Los Angeles, was founded by Roberta Sparta. It is built on the principles of authenticity, collaboration, and excellence...</p>
+        </div>
+    </section>
+    <section class="partners">
+        <h2>Partners</h2>
+        <div class="partners-grid">
+            <div class="partner-item">
+                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/479970640_17845775118417512_698317380857983046.jpg" alt="Partner 1"></a>
+                <div class="partner-caption">Vertical Era</div>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/3d_logo_mockup-01.1632639216.webp" alt="Partner 2"></a>
+                <div class="partner-caption">Lewabo</div>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/IMG-1532.png" alt="Partner 3"></a>
+                <div class="partner-caption">Good Time Bear</div>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/blob-553129c.png" alt="Partner 4"></a>
+                <div class="partner-caption">Black Dog Media</div>
+            </div>
+            <div class="partner-item">
+                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/blob.png" alt="Partner 5"></a>
+                <div class="partner-caption">Boys Club Agency</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparta Productions - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="sparta2.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif; /* or 'Cormorant Garamond', serif; */
+            background-color: #000000;
+            color: #d4af37;
+            text-align: center;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            /*overflow: hidden;*/
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-text {
+            position: relative;
+            margin-top: 20px;
+            font-size: 2.5rem;
+            
+            text-transform: uppercase;
+        }
+        .testimonials {
+        text-align: center;
+        color: #d4af37;
+        font-family: 'Cormorant Garamond', serif;
+        margin-top: 50px;
+    }
+    .testimonial-slider {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .testimonial {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    .testimonial.active {
+        opacity: 1;
+        transform: translateX(0);
+        position: relative;
+    }
+    .quote {
+        font-size: 1.8rem;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+    .client-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .client-info img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .client-text .name {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .client-text .title {
+        font-size: 1rem;
+        color: #aaa;
+    }
+    .dots {
+        margin-top: 15px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #aaa;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: #d4af37;
+    }
+    .connect-section {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: #d4af37;
+            font-family: 'Cinzel', serif;
+        }
+        .connect-section a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 24px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .connect-section a:hover {
+            color: white;
+        }
+        .instagram-icon {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="sparta.jpg" alt="Sparta Productions"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="meet-the-team.html">MEET THE TEAM</a></li>
+                <li><a href="services.html">WHAT WE DO</a></li>
+                <li><a href="our-work.html">OUR WORK</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <div class="nav-icons">
+                <!--<span class="search-icon">🔍</span>
+                <span class="menu-icon">☰</span>-->
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="sparta.mp4" type="video/mp4">
+            <img src="sparta.jpg" alt="Sparta Productions">
+        </video>
+    </section>
+    <div class="hero-text">A Full Service<br> Production Company</div>
+    <section class="testimonials">
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p class="quote">&#8220; Roberta is a leader by nature, a team player, reliable, positive, organized, and quick on her toes. I look forward to working with Sparta Productions again. &#8221;</p>
+                <div class="client-info">
+                    
+                    <div class="client-text">
+                        <p class="name">Kristen Garner</p>
+                        <p class="title">Women of Wrestling</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="quote">&#8220; Roberta is one of the most reliable filmmakers. She understands a client’s need perfectly and knows how to execute. &#8221;</p>
+                <div class="client-info">
+                    
+                    <div class="client-text">
+                        <p class="name">Oliver Wong</p>
+                        <p class="title">Playlet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p class="quote">&#8220; I never feel that any ideas are impossible to accomplish with Roberta on the team. She handles any unforeseen challenges with ease and professionalism. &#8221;</p>
+                <div class="client-info">
+                   
+                    <div class="client-text">
+                        <p class="name">Amelia Joyce</p>
+                        <p class="title">Boys Club Creative</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="manualRotate(0)"></span>
+            <span class="dot" onclick="manualRotate(1)"></span>
+            <span class="dot" onclick="manualRotate(2)"></span>
+        </div>
+    </section>
+    <p>CONNECT WITH US</p>
+        <a href="https://www.instagram.com/spartaproductions_/">
+            <i style="color: white; transition: color 0.3s ease-in-out;" onmouseover="this.style.color='#818181'" onmouseout="this.style.color='white'" id="igico" class="fab fa-instagram"></i>
+
+        </a>
+    <footer style="background-color: black; color: white; padding: 20px 0; font-family:Arial, Helvetica, sans-serif; font-size: 10px;">
+        
+        
+        <p>&copy; 2025 Sparta Productions</p>
+    </footer>
+    
+    <script>
+    let currentIndex = 0;
+    let interval;
+    
+    function showTestimonial(index) {
+        let testimonials = document.querySelectorAll(".testimonial");
+        let dots = document.querySelectorAll(".dot");
+        let direction = index > currentIndex ? "100%" : "-100%";
+        let reverseDirection = index > currentIndex ? "-100%" : "100%"; 
+        
+        testimonials[currentIndex].style.transform = `translateX(${reverseDirection})`;
+        testimonials[currentIndex].style.opacity = "0";
+        testimonials[currentIndex].classList.remove("active");
+        
+        testimonials[index].style.transform = `translateX(0)`;
+        testimonials[index].style.opacity = "1";
+        testimonials[index].classList.add("active");
+        
+        dots[currentIndex].classList.remove("active");
+        dots[index].classList.add("active");
+        
+        currentIndex = index;
+    }
+    
+    function autoRotate() {
+        let nextIndex = (currentIndex + 1) % document.querySelectorAll(".testimonial").length;
+        showTestimonial(nextIndex);
+    }
+    
+    function startRotation() {
+        clearInterval(interval);
+        interval = setInterval(autoRotate, 5000);
+    }
+    
+    function manualRotate(index) {
+        showTestimonial(index);
+        startRotation();
+    }
+    
+    startRotation();
+    </script>
+    
+</body>
+</html>
