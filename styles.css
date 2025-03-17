@@ -57,3 +57,25 @@ a:hover{
             color: #d4af37;
             transition: color ease-in-out;
         }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            .nav-links a {
+                font-size: 15px;
+                padding: 10px;
+            }
+            .nav-icons {
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .logo img {
+                height: 80px;
+            }
+        }
