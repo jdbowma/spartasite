@@ -204,6 +204,55 @@
     </footer>
     
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".hero video");
+
+    // Create the mute button
+    const muteButton = document.createElement("button");
+    muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Default muted icon
+    muteButton.style.position = "fixed";
+    muteButton.style.bottom = "20px";
+    muteButton.style.right = "20px";
+    muteButton.style.background = "rgba(255, 255, 255, 0)"; // Subtle background
+    muteButton.style.color = "#d4af37"; // White icon for contrast
+    muteButton.style.border = "1px solid rgba(255, 255, 255, 0)";
+    muteButton.style.padding = "12px";
+    muteButton.style.fontSize = "1.5rem";
+    muteButton.style.borderRadius = "50%";
+    muteButton.style.cursor = "pointer";
+    muteButton.style.zIndex = "1000";
+    muteButton.style.transition = "opacity 0.3s ease-in-out, background 0.3s";
+
+    // Append the button
+    document.body.appendChild(muteButton);
+
+    // Mute/unmute toggle
+    muteButton.addEventListener("click", function () {
+        if (video.muted) {
+            video.muted = false;
+            muteButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Unmuted icon
+        } else {
+            video.muted = true;
+            muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Muted icon
+        }
+    });
+
+    // Hide button when mouse is inactive
+    let hideTimeout;
+    function showMuteButton() {
+        muteButton.style.opacity = "1";
+        clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(() => (muteButton.style.opacity = "0.1"), 2000);
+    }
+
+    // Show/hide button on mouse movement
+    document.addEventListener("mousemove", showMuteButton);
+    muteButton.addEventListener("mouseover", () => (muteButton.style.background = "rgba(255, 255, 255, 0.1)"));
+    muteButton.addEventListener("mouseleave", () => (muteButton.style.background = "rgba(255, 255, 255, 0)"));
+
+    // Start with slight transparency
+    muteButton.style.opacity = "0.5";
+});
     let currentIndex = 0;
     let interval;
     
