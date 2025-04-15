@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sparta Productions - About Us</title>
+    <title>Sparta Productions - Our Work</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
@@ -15,184 +15,91 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Cinzel', serif; /* or 'Cormorant Garamond', serif; */
+            font-family: 'Cinzel', serif;
             background-color: #000000;
             color: #d4af37;
             text-align: center;
         }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: black;
-            padding: 15px 50px;
-        }
-        .logo img {
-            height: 100px;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        .nav-links li {
-            display: inline;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 5px 10px;
-        }
-        .nav-links a.active,
-        .nav-links a:hover {
-            color: #d4af37;
-            border-bottom: 2px solid #d4af37;
-        }
-        .nav-icons {
-            display: flex;
-            gap: 15px;
-            font-size: 20px;
-            cursor: pointer;
-            color: white;
-        }
-    .connect-section {
-            text-align: center;
-            padding: 20px;
-            background-color: black;
-            color: #d4af37;
-            font-family: 'Cinzel', serif;
-        }
-        .connect-section a {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: 24px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .connect-section a:hover {
-            color: white;
-        }
-        .instagram-icon {
-            font-size: 30px;
-            margin-top: 10px;
-        }
-        a i:hover {
-            font-size: 18px;
-            color:#aaa;
-            transition: color 0.3s ease-in-out;
-            transition: font-size 0.3s ease-in-out;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 50px;
-        }
-        .about-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1000px;
-            margin: auto;
-            text-align: left;
-            padding: 10px;
-        }
-        .about-container img {
-            width: 532px;
-            height: 532px;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-        .about-text {
-            width: 50%;
-            
-        }
-        .about-text h1 {
-            border-bottom: 2px solid #d4af37;
-            display: inline-block;
-            padding-bottom: 5px; 
-            
-        }
-        .about-text p {
-            font-family: 'Cormorant Garamond', serif;
-            color: #FFF;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        .partners {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        .partners h2 {
-            font-size: 24px;
-            border-bottom: 2px solid #d4af37;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .partners-grid {
+
+        .work-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 20px;
-            justify-content: center;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
             padding-top: 20px;
+            padding-bottom: 20px;
         }
-        .partner-item {
+
+        .work-item {
             position: relative;
-            background-color: #000000;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid #d4af37;
         }
-        .partner-item img {
+
+        .work-item img,
+        .work-item iframe {
             width: 100%;
-            height: 375px;
-            border-radius: 10px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
         }
-        .partner-item:hover {
+
+        .work-item iframe {
+            height: 100%;  /* Adjust iframe height to give space for title below */
+        }
+
+        .work-item:hover img,
+        .work-item:hover iframe {
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+            filter: brightness(100%);
         }
-        .partner-caption {
+        .work-item:hover{
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .work-info {
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
+            top: 100%;  /* Initially hidden below the iframe */
+            left: 0;
+            width: 100%;
+            height: 15%;  /* Space for the title and description */
+            background: rgba(0, 0, 0, 0.8);
             color: #d4af37;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: top 0.3s ease-in-out;
         }
-        .partner-item:hover .partner-caption {
-            opacity: 1;
+
+        .work-item:hover .work-info {
+            top: 85%; /* On hover, move it above the iframe */
         }
+
+        .work-info h3, .work-info p {
+            margin: 5px 0;
+        }
+
         @media (max-width: 768px) {
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-container img, .about-text {
-                width: 100%;
-                margin: 0;
-            }
-            .partners-grid {
+            .work-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
         @media (max-width: 500px) {
-            .partners-grid {
+            .work-container {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
-        h1 {
+
+        h2 {
             border-bottom: 2px solid #d4af37;
             display: inline-block;
-            padding-bottom: 5px; 
         }
     </style>
 </head>
@@ -205,9 +112,9 @@
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="meet-the-team.html">MEET THE TEAM</a></li>
+                <li><a href="meet-the-team.html" class="active">MEET THE TEAM</a></li>
                 <li><a href="services.html">WHAT WE DO</a></li>
-                <li><a href="our-work.html" class="active">OUR WORK</a></li>
+                <li><a href="our-work.html">OUR WORK</a></li>
                 <li><a href="contact.html">CONTACT US</a></li>
             </ul>
             <div class="nav-icons">
@@ -216,45 +123,70 @@
             </div>
         </nav>
     </header>
-    <h1>About Us</h1>
-    <section class="about-container">
-        
-        <img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/8759f061-938a-41d3-8d52-f8f1518b7444%20(1).JPG" alt="Sparta Productions Team">
-        <div class="about-text">
-            
-            <p><strong>Sparta Productions</strong>
-                is a Los Angeles-based media company founded and led by Roberta Sparta. With operations covering all corners of the country, 
-                Sparta continues to build upon and adhere to its principles of authenticity, collaboration, and excellence. 
-                Having worked as an actor, producer, line producer, assistant director, and director, among other positions in the film industry, 
-                Roberta brings to set a profound understanding of all departments of production. Critical scheduling skills, industry-bred coordination and management abilities, 
-                and a comprehensive knowledge of the business of filmmaking are the foundation of Roberta's expansive portfolio of film and vertical content.</p>
-            <p>“I believe in the power of storytelling to connect, inspire, and drive change. That’s why I am committed to producing content that not only entertains but also challenges perspectives and fosters meaningful dialogue. Regardless of limited resources and time constraints, my goal remains to craft stories that reflect the diverse world we live in and resonate with audiences on a personal level.”</p>
+
+    <h1>Our Work</h1>
+    <h2>Feature Films</h2>
+    <section class="work-container">
+        <!-- Video Example -->
+        <div class="work-item">
+            <iframe src="https://www.youtube.com/embed/paWA8RmC_78" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="work-info">
+                <h3>10 Things About Sally</h3>
+            </div>
         </div>
-    </section>
-    <section class="partners">
-        <h2>Partners</h2>
-        <div class="partners-grid">
-            <div class="partner-item">
-                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/479970640_17845775118417512_698317380857983046.jpg" alt="Partner 1"></a>
-                <div class="partner-caption">Vertical Era</div>
+        <div class="work-item">
+            <iframe src="https://www.youtube.com/embed/paWA8RmC_78?si=VcnjarJkpr4tkAQb" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="work-info">
+                <h3>Vertical Title</h3>
+                <p>Description of the vertical.</p>
             </div>
-            <div class="partner-item">
-                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/3d_logo_mockup-01.1632639216.webp" alt="Partner 2"></a>
-                <div class="partner-caption">Lewabo</div>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/IMG-1532.png" alt="Partner 3"></a>
-                <div class="partner-caption">Good Time Bear</div>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/blob-553129c.png" alt="Partner 4"></a>
-                <div class="partner-caption">Black Dog Media</div>
-            </div>
-            <div class="partner-item">
-                <a href="#"><img src="https://img1.wsimg.com/isteam/ip/7058c6c7-0553-43ac-8dfa-26e4695bdb04/blob.png" alt="Partner 5"></a>
-                <div class="partner-caption">Boys Club Agency</div>
+        </div>
+        <!-- Image Example -->
+        <div class="work-item">
+            <img src="poster1.jpg" alt="Poster for Vertical">
+            <div class="work-info">
+                <h3>Vertical Title</h3>
+                <p>Description of the vertical.</p>
             </div>
         </div>
     </section>
+
+    <h2>TV Movies</h2>
+    <section class="work-container">
+        <!-- Video Example -->
+        <div class="work-item">
+            <iframe src="https://www.youtube.com/embed/dALHRF_VmlQ?si=_dwGb7uPru6Fr-mx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="work-info">
+                <h3>Short Film Title</h3>
+                <p>Description of the short film.</p>
+            </div>
+        </div>
+    </section>
+    <h2>Verticals</h2>
+    <section class="work-container">
+        <!-- Video Example -->
+        <div class="work-item">
+            <iframe src="https://www.youtube.com/embed/dALHRF_VmlQ?si=_dwGb7uPru6Fr-mx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="work-info">
+                <h3>Short Film Title</h3>
+                <p>Description of the short film.</p>
+            </div>
+        </div>
+    </section>
+      <h2>TV Movies</h2>
+    <section class="work-container">
+        <!-- Video Example -->
+        <div class="work-item">
+            <iframe src="https://www.youtube.com/embed/dALHRF_VmlQ?si=_dwGb7uPru6Fr-mx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="work-info">
+                <h3>Short Film Title</h3>
+                <p>Description of the short film.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sparta Productions</p>
+    </footer>
 </body>
 </html>
